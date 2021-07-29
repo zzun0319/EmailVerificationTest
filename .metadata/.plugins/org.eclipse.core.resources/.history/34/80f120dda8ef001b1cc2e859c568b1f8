@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="com.junhee.email.user.IUserMapper">
+
+	<resultMap id="UserMap" type="com.junhee.email.user.UserVO">
+		<id property="userId" column="user_id"/>
+		<result property="userPw" column="user_pw"/>
+		<result property="userEmail" column="user_email"/>
+		<result property="userEmailHash" column="user_email_hash"/>
+		<result property="userEmailChecked" column="user_email_checked"/>
+	</resultMap>
+
+	<insert id="Register">
+		INSERT INTO user_test (user_id, user_pw, user_email, user_email_hash) VALUES (#{userId},#{userPw}, #{userEmail}, #{userEmailHash})
+	</insert>
+	
+	<select id="CheckId" resultMap="UserMap">
+		SELECT * FROM user_test WHERE user_id=#{userId}
+	</select>
+
+	<select id="CheckEmail" resultMap="UserMap">
+		SELECT * FROM user_test WHERE user_email=#{userEmail}
+	</select>
+	
+	<update id="SetEmailChecked">
+		UPDATE user_test SET user_email_checked = 1 WHERE user_id=#{userId}
+	</update>
+	
+</mapper>

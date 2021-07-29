@@ -1,0 +1,22 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>로그인 페이지</title>
+</head>
+<body>
+	<h2>가입성공, 로그인 페이지</h2>
+</body>
+</html>
+
+<script>
+
+	const result = "${msg}"
+	if(result.length > 0){
+		alert(result);
+	}
+
+</script>

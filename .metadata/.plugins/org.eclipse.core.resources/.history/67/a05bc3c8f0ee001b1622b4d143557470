@@ -1,0 +1,5 @@
+package com.junhee.email.user;
+
+public interface IUserService {
+
+}

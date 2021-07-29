@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+D:\emailverificationTest\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+4285332766.index
+37587394.index
+834133837.index
+4168672658.index
+326941602.index
+69150275.index
+764267707.index

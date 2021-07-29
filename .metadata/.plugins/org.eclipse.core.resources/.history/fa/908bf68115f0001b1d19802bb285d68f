@@ -1,0 +1,77 @@
+<%@page import="javax.mail.internet.MimeMessage"%>
+<%@page import="javax.mail.Session"%>
+<%@page import="javax.mail.Authenticator"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="javax.mail.Transport" %>
+<%@ page import="javax.mail.Message" %>
+<%@ page import="javax.mail.Address" %>
+<%@ page import="javax.mail.internet.InternetAddress" %>
+<%@ page import="java.util.Properties" %>
+<%@ page import="com.junhee.email.user.IUserMapper" %>
+<%@ page import="com.junhee.email.util.SHA256" %>
+<%@ page import="com.junhee.email.util.Gmail" %>
+<%@ page import="java.io.PrintWriter" %>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>마이페이지</h2>
+	<c:if test="${!user.userEmailChecked}"> <!-- 인증을 안 받은 사용자 -->
+	<%
+		String host = "http://localhost:8383/";
+		String from = "zzun0319@gmail.com"; /* 관리자의 이메일 계정 */
+		String to = ""; // 사용자의 이메일 계정
+		String subject = "회원가입 인증 이메일입니다.";
+		String content = "다음 링크에 접속하여 이메일 인증을 진행하세요." +
+			"<a href='/user/emailCheckAction?code=" + new SHA256().getSHA256(to) + "'> 이메일 인증하기 </a>";
+	
+		Properties p = new Properties();
+		p.put("mail.smtp.user", from);
+		p.put("mail.smtp.host", "smtp.googleemail.com");
+		p.put("mail.smtp.port", "465");
+		p.put("mail.smtp.starttls.enable", "true");
+		p.put("mail.smtp.auth", "true");
+		p.put("mail.smtp.debug", "true");
+		p.put("mail.smtp.socketFactory.port", "465");
+		p.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+		p.put("mail.smtp.socketFactory.fallback", "false");
+		
+		try{
+			
+			Authenticator auth = new Gmail();
+			Session ses = Session.getInstance(p, auth);
+			MimeMessage msg = new MimeMessage(ses);
+			msg.setSubject(subject);
+			Address formAddr = new InternetAddress(from);
+			msg.setFrom(formAddr);
+			Address toAddr = new InternetAddress(to);
+			msg.addRecipient(Message.RecipientType.TO, toAddr);
+			msg.setContent(content, "text/html;charset=UTF8");
+			Transport.send(msg); // 실제 전송하는 부분
+			
+		} catch (Exception e){
+			// alert 오류가 발생했다.
+			e.printStackTrace();
+		}
+		
+	%>
+	</c:if>
+	<c:if test="${user.userEmailChecked}"> <!-- 인증 받은 사용자 -->
+	
+	</c:if>
+</body>
+</html>
+
+<script>
+
+	const result = "${msg}"
+	if(result.length > 0){
+		alert(result);
+	}
+
+</script>

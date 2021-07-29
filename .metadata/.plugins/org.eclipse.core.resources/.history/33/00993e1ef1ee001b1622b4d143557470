@@ -1,0 +1,8 @@
+package com.junhee.email.user;
+
+public interface IUserMapper {
+
+	// 회원가입
+	void Register(UserVO user);
+	
+}

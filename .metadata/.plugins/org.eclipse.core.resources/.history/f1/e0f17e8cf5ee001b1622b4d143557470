@@ -1,0 +1,11 @@
+package com.junhee.email.user;
+
+public interface IUserMapper {
+
+	// 회원가입
+	public void Register(UserVO user);
+	
+	// 회원가입 전 정보들 중복 조회
+	public UserVO CheckId(String userId);
+	
+}

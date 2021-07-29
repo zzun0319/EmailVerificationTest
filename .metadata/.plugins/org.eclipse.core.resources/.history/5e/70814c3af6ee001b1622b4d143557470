@@ -1,0 +1,29 @@
+package com.junhee.email.user;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class UserService implements IUserService {
+
+	@Autowired
+	private IUserMapper mapper;
+
+	@Override
+	public String Register(UserVO user) {
+		
+		UserVO returnUvo = mapper.CheckId(user.getUserId());
+		if(returnUvo != null) {
+			return "이미 사용중인 아이디입니다.";
+		}
+		returnUvo = mapper.CheckEmail(user.getUserEmail());
+		if(returnUvo != null) {
+			return "이미 사용중인 이메일입니다.";
+		}
+		else {
+			mapper.Register(user);
+			return "가입이 완료되었습니다.";
+		}
+	}
+	
+}

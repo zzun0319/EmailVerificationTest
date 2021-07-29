@@ -1,0 +1,73 @@
+package com.junhee.email;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import com.junhee.email.user.IUserMapper;
+import com.junhee.email.user.UserVO;
+
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations= {"file:src/main/webapp/WEB-INF/spring/root-context.xml"})
+public class UserMapperTest {
+
+	@Autowired
+	private IUserMapper mapper;
+	
+	@Test
+	public void RegisterTest() {
+		
+		UserVO user = new UserVO();
+		user.setUserId("gkgk");
+		user.setUserPw("pwpw");
+		user.setUserEmail("aaa@naver.com");
+		user.setUserEmailHash("dddd");
+		mapper.Register(user);
+	}
+	
+	@Test
+	public void CheckIdTest() {
+		
+		UserVO user = mapper.CheckId("abc1234");
+		if(user == null) {
+			System.out.println("중복되는 아이디 없음.");
+		}else {
+			System.out.println("중복되는 아이디입니다.");
+		}
+	}
+	
+	@Test
+	public void CheckEmailTest() {
+		UserVO user = mapper.CheckEmail("abc1234@naver.com");
+		if(user == null) {
+			System.out.println("중복되는 이메일 없음.");
+		}else {
+			System.out.println("중복되는 이메일입니다.");
+		}
+	}
+	
+	@Test
+	public void GetEmailChecked() {
+		
+		UserVO user = mapper.CheckId("abc1234");
+		
+		if(user == null) {
+			System.out.println("존재하지 않는 유저");
+		} else {
+			if(user.getUserEmailChecked() == 1) {
+				System.out.println("이메일 인증됨");
+			} else {
+				System.out.println("이메일 인증 안 됨");
+			}
+		}
+	}
+	
+	@Test
+	public void SetEmailCheckTrueTest() {
+		mapper.SetEmailChecked("bbb1234");
+		System.out.println(mapper.CheckId("bbb1234"));
+	}
+	
+}
