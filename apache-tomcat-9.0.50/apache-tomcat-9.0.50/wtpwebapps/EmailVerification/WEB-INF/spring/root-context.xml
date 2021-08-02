@@ -32,6 +32,7 @@
  		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"/>
 	</bean>
 	
-	<mybatis-spring:scan base-package="com.junhee.email" />
+	<mybatis-spring:scan base-package="com.junhee.email.user" />
+	<mybatis-spring:scan base-package="com.junhee.email.file" />
 		
 </beans>

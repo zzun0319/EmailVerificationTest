@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="com.junhee.email.user.UserVO" %>
+<%@ page import="com.junhee.email.model.UserVO" %>
 <%@ page import="com.junhee.email.user.IUserMapper" %>
 <%@ page import="com.junhee.email.util.SHA256" %>
 <%@ page import="java.io.PrintWriter" %> <!-- 특정 스크립트 구문 출력 -->

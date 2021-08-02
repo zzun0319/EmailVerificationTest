@@ -13,6 +13,7 @@ import javax.mail.internet.MimeMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.junhee.email.model.UserVO;
 import com.junhee.email.util.Gmail;
 import com.junhee.email.util.SHA256;
 

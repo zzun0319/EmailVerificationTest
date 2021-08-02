@@ -1,5 +1,7 @@
 package com.junhee.email.user;
 
+import com.junhee.email.model.UserVO;
+
 public interface IUserMapper {
 
 	// 회원가입

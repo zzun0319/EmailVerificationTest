@@ -1,0 +1,5 @@
+package com.junhee.email.model;
+
+public class ItemForm {
+
+}

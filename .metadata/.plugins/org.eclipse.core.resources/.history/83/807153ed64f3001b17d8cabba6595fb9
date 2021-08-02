@@ -1,0 +1,9 @@
+package com.junhee.email.model;
+
+public class Item {
+	
+	private Long id;
+	private String itemName;
+	private UploadFile attachFile;
+	
+}

@@ -1,0 +1,88 @@
+package com.junhee.email.model;
+
+public class Item {
+	
+	private int idx;
+	private int bbsIdx;
+	private String fileName;
+	private String filePath;
+	private String fileFormat;
+	private long fileSize;
+	private String regDate;
+	
+	public Item() {}
+
+	public Item(int idx, int bbsIdx, String fileName, String filePath, String fileFormat, long fileSize,
+			String regDate) {
+		this.idx = idx;
+		this.bbsIdx = bbsIdx;
+		this.fileName = fileName;
+		this.filePath = filePath;
+		this.fileFormat = fileFormat;
+		this.fileSize = fileSize;
+		this.regDate = regDate;
+	}
+
+	public int getIdx() {
+		return idx;
+	}
+
+	public void setIdx(int idx) {
+		this.idx = idx;
+	}
+
+	public int getBbsIdx() {
+		return bbsIdx;
+	}
+
+	public void setBbsIdx(int bbsIdx) {
+		this.bbsIdx = bbsIdx;
+	}
+
+	public String getFileName() {
+		return fileName;
+	}
+
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+	}
+
+	public String getFilePath() {
+		return filePath;
+	}
+
+	public void setFilePath(String filePath) {
+		this.filePath = filePath;
+	}
+
+	public String getFileFormat() {
+		return fileFormat;
+	}
+
+	public void setFileFormat(String fileFormat) {
+		this.fileFormat = fileFormat;
+	}
+
+	public long getFileSize() {
+		return fileSize;
+	}
+
+	public void setFileSize(long fileSize) {
+		this.fileSize = fileSize;
+	}
+
+	public String getRegDate() {
+		return regDate;
+	}
+
+	public void setRegDate(String regDate) {
+		this.regDate = regDate;
+	}
+
+	@Override
+	public String toString() {
+		return "FileVO [idx=" + idx + ", bbsIdx=" + bbsIdx + ", fileName=" + fileName + ", filePath=" + filePath
+				+ ", fileFormat=" + fileFormat + ", fileSize=" + fileSize + ", regDate=" + regDate + "]";
+	}
+	
+}

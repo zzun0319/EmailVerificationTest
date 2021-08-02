@@ -1,0 +1,33 @@
+package com.junhee.email.file;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import com.junhee.email.model.Item;
+
+public class ItemRepository {
+	
+	private Map<Long, Item> store = new HashMap<>();
+	
+	public ItemRepository() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public ItemRepository(Map<Long, Item> store) {
+		this.store = store;
+	}
+
+	public Map<Long, Item> getStore() {
+		return store;
+	}
+
+	public void setStore(Map<Long, Item> store) {
+		this.store = store;
+	}
+
+	@Override
+	public String toString() {
+		return "ItemRepository [store=" + store + "]";
+	}
+	
+}

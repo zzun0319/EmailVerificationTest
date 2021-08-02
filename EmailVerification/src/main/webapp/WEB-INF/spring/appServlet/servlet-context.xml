@@ -22,6 +22,17 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
+	<!-- 파일 업로드 위해 필요한 MultipartResolver -->
+	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<beans:property name="maxUploadSize" value="100000000" /> <!-- -1: 제한 없음 -->
+		<beans:property name="maxInMemorySize" value="100000000"></beans:property>
+		<beans:property name="defaultEncoding" value="UTF-8" />
+	</beans:bean>
+	
+	<beans:bean id="uploadPath" class="java.lang.String">
+		<beans:constructor-arg value="d:\uploadLocation\"/>
+	</beans:bean>
+	
 	<context:component-scan base-package="com.junhee.email" />
 	
 	

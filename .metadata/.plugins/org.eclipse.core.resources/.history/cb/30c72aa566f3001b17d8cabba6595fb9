@@ -1,0 +1,8 @@
+package com.junhee.email.file;
+
+import com.junhee.email.model.Item;
+
+public interface IFileService {
+
+	public void Save(Item item);
+}

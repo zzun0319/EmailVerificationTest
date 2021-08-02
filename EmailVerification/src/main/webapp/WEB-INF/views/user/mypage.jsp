@@ -32,7 +32,8 @@
 			<a href="/user/authentication?userId=${user.userId}"> 인증 메일 발송하기 </a>
 		</c:if>
 		<c:if test="${user.userEmailChecked}"> <!-- 인증 받은 사용자 -->
-			<h2>회원 분류에 따른 메뉴들</h2>
+			<h2><a href="/file/upload">업로드 페이지로 이동</a></h2>
+			<h2><a href="/item/newItem">업로드 페이지로 이동</a></h2>
 		</c:if>	
 	</c:if>
 

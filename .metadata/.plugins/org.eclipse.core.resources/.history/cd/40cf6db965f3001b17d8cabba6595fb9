@@ -1,0 +1,15 @@
+package com.junhee.email.file;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.stereotype.Repository;
+
+import com.junhee.email.model.Item;
+
+@Repository
+public class ItemRepository {
+	
+	private final Map<Long, Item> store = new HashMap<>();
+	
+}

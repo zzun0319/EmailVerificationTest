@@ -1,0 +1,55 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>파일 업로드</title>
+</head>
+<body>
+	<form id="communityInsert" name="communityInsert" onsubmit="return false;" method="post" enctype="multipart/form-data">
+    <table>
+        <thead>
+            <tr>
+                <th style="text-align: center; font-size: 18px;">제목
+                    <em class="mlp20 mrp10" id="communitynoticeEm" style="font-size: 15px; color:#499bf0; ">공지사항</em>
+                    <input type="checkbox" id="communitynotice" name="communitynotice">
+                </th>
+                <th>
+                    <span class="title_guide" id="title_guide" style="display: none; position: absolute;"></span> 
+                    <input name="title" id="title" placeholder="제목을 입력하세요." maxlength="80" style="width: 45%; height: 42px; font-size: 20px;">
+                </th>
+            </tr>
+            <tr>
+                <th style="text-align: center; font-size: 18px;">작성 날짜</th>
+                <th>
+                    <input type="text" name="regDate" id="regdate" />
+                </th>
+            </tr>
+            <tr>
+                <th style="text-align: center; font-size: 18px;">작성자</th>
+                <th>
+                    <input type="text" name="userId" id="userid" value="${user.userId}" readonly />
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="2">
+                    <span class="content_guide" id="content_guide" style="display: none; position: absolute;"></span> 
+                    <textarea name="content" id="content"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: center; font-size: 18px;">파일 첨부</td>
+                <td>
+                    <div class="attach">
+                        <input type="file" id="file" name="file" class="filebox on">
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <input type="hidden" id="bbsidx" name="bbsidx" value="${bbsidx}">
+</form>
+</body>
+</html>

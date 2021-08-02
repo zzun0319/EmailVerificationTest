@@ -1,0 +1,8 @@
+package com.junhee.email.file;
+
+import com.junhee.email.model.FileVO;
+
+public interface IFileService {
+
+	public void Upload(FileVO file);
+}

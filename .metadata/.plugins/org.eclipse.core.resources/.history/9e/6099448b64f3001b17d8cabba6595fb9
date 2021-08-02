@@ -1,0 +1,10 @@
+package com.junhee.email.file;
+
+import com.junhee.email.model.FileVO;
+
+public interface IFileMapper {
+
+	// 파일 업로드
+	public void Upload(FileVO file);
+	
+}

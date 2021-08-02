@@ -1,4 +1,4 @@
 #Tomcat publish data
-#Thu Jul 29 14:20:08 KST 2021
+#Mon Aug 02 22:26:49 KST 2021
 org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\\uAE40\uC900\uD76C\\.m2\\repository\\org\\springframework\\spring-web\\5.2.9.RELEASE\\spring-web-5.2.9.RELEASE.jar=D\:\\emailverificationTest\\apache-tomcat-9.0.50\\apache-tomcat-9.0.50\\wtpwebapps\\EmailVerification\\WEB-INF\\lib\\spring-web-5.2.9.RELEASE.jar
 org.eclipse.jst.jee.server\:EmailVerification=D\:\\emailverificationTest\\apache-tomcat-9.0.50\\apache-tomcat-9.0.50\\wtpwebapps\\EmailVerification

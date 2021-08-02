@@ -1,0 +1,31 @@
+package com.junhee.email.file;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.junhee.email.model.Item;
+
+@Service
+public class FileService implements IFileService {
+
+	@Autowired
+	private IFileMapper mapper;
+	
+	private Map<Long, Item> store = new HashMap<>();
+
+	@Override
+	public Item Save(Item item) {
+		
+		store.put(item.getId(), item);
+		return item;
+	}
+
+	@Override
+	public Item FindById(Long id) {
+		return store.get(id);
+	}
+	
+}

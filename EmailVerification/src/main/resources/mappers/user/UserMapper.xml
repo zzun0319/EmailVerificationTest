@@ -4,7 +4,7 @@
     
 <mapper namespace="com.junhee.email.user.IUserMapper">
 
-	<resultMap id="UserMap" type="com.junhee.email.user.UserVO">
+	<resultMap id="UserMap" type="com.junhee.email.model.UserVO">
 		<id property="userId" column="user_id"/>
 		<result property="userPw" column="user_pw"/>
 		<result property="userEmail" column="user_email"/>
